@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You Page</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== Basic Reset ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; font-family: 'Pacifico', cursive; overflow: hidden; }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(270deg, #ff1b6b, #ff4d8d, #ff85b3, #ff4d8d, #c9184a, #ff1b6b);
+      background-size: 600% 600%;
+      animation: rgbPink 18s ease infinite;
+      flex-direction: column;
+    }
+
+    @keyframes rgbPink {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* ===== Slideshow Container ===== */
+    .slideshow-container {
+      position: relative;
+      width: 80%;
+      max-width: 800px;
+      height: 700px;
+      margin: 100px auto 30px auto; /* adjust top space */
+      overflow: hidden;
+      border-radius: 0;      /* remove border radius if you want fully floating images */
+      box-shadow: none;      /* remove shadow if needed */
+      background: transparent; /* make container see-through */
+      z-index: 3;            /* make sure it's above background layers */
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;   /* keeps aspect ratio, no cropping */
+      transform: scale(1); /* makes images appear smaller inside the transparent container */
+      display: block;
+      margin: auto;
+      transition: transform 1s ease, opacity 1s ease; /* smooth fade/scale */
+    }
+
+    /* ===== Messages ===== */
+    .message {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      font-size: 1.8em;
+      text-align: center;
+      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .message.active {
+      opacity: 1;
+    }
+
+    /* ===== Back Button ===== */
+    .btn.back {
+      padding: 20px 60px;
+      font-family: Pacifico, cursive;
+      font-size: 1.5em;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      background: #9b59b6;
+      color: #fff;
+      text-shadow: 0 0 5px rgba(255,255,255,0.5);
+      transition: all 0.3s ease, opacity 0.5s ease;
+      opacity: 0;           /* hidden */
+      pointer-events: none; /* not clickable yet */
+    }
+
+    .btn.back.show {
+      opacity: 1;
+      pointer-events: auto; /* clickable now */
+    }
+
+  </style>
+</head>
+<body>
+
+  <audio id="bg-music" src="pics/bg-music.mp3" loop></audio>
+  
+  <div class="slideshow-container">
+    <div class="slide active">
+      <img src="pics/1.jpg" alt="Slide 1">
+      <div class="message active">Hi Jhulia ko</div>
+    </div>
+    <div class="slide">
+      <img src="pics/2.jpg" alt="Slide 2">
+      <div class="message">Sana magustuhan mo to</div>
+    </div>
+    <div class="slide">
+      <img src="pics/3.jpg" alt="Slide 3">
+      <div class="message">Baby, bubu, bebe, babu</div>
+    </div>
+    <div class="slide">
+      <img src="pics/4.jpg" alt="Slide 4">
+      <div class="message">Mahal na mahal kita sobra!</div>
+    </div>
+    <div class="slide">
+      <img src="pics/6.jpg" alt="Slide 6">
+      <div class="message">Thank you for sticking with me hehe</div>
+    </div>
+    <div class="slide">
+      <img src="pics/7.jpg" alt="Slide 7">
+      <div class="message">Thankful ako na dumating ka sa life ko</div>
+    </div>
+    <div class="slide">
+      <img src="pics/8.jpg" alt="Slide 8">
+      <div class="message">Sana baby magtagal pa tayo hehe</div>
+    </div>
+    <div class="slide">
+      <img src="pics/9.jpg" alt="Slide 9">
+      <div class="message">Eto baby pumili ako ng mga magaganda mong picpics</div>
+    </div>
+    <div class="slide">
+      <img src="pics/10.jpg" alt="Slide 10">
+      <div class="message">Oh bat naiiyak kana</div>
+    </div>
+    <div class="slide">
+      <img src="pics/11.jpg" alt="Slide 11">
+      <div class="message">hahahaha eme</div>
+    </div>
+    <div class="slide">
+      <img src="pics/12.jpg" alt="Slide 12">
+      <div class="message">tapusin mo to may surprise pa to sa dulo</div>
+    </div>
+    <div class="slide">
+      <img src="pics/13.jpg" alt="Slide 13">
+      <div class="message">Hehe sobrang ganda mo baby</div>
+    </div>
+    <div class="slide">
+      <img src="pics/14.jpg" alt="Slide 14">
+      <div class="message">LDR man tayo baby pero sana madama mo</div>
+    </div>
+    <div class="slide">
+      <img src="pics/15.jpg" alt="Slide 15">
+      <div class="message">Dito sa ginawa ko</div>
+    </div>
+    <div class="slide">
+      <img src="pics/16.jpg" alt="Slide 16">
+      <div class="message">Yung pagmamahal ko sayo</div>
+    </div>
+    <div class="slide">
+      <img src="pics/17.jpg" alt="Slide 17">
+      <div class="message">Mahal na Mahal kita</div>
+    </div>
+    <div class="slide">
+      <img src="pics/18.jpg" alt="Slide 18">
+      <div class="message">Wag na wag ka magsasawa</div>
+    </div>
+    <div class="slide">
+      <img src="pics/19.jpg" alt="Slide 19">
+      <div class="message">Hehe to more pics with youu</div>
+    </div>
+    <div class="slide">
+      <img src="pics/20.jpg" alt="Slide 20">
+      <div class="message">AI palang to pero...</div>
+    </div>
+    <div class="slide">
+      <img src="pics/21.jpg" alt="Slide 21">
+      <div class="message">May memories naren naman tayong nabuo</div>
+    </div>
+    <div class="slide">
+      <img src="pics/22.jpg" alt="Slide 22">
+      <div class="message">To more valentines and memories with you bubu bear</div>
+    </div>
+  </div>
+
+  <button class="btn back">I LOVE YOU 💖</button>
+
+  <script>
+    // ===== Slideshow Logic =====
+    const slides = document.querySelectorAll('.slide');
+    const messages = document.querySelectorAll('.message');
+    const backBtn = document.querySelector('.btn.back');
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    // Hide back button initially
+    backBtn.style.opacity = 0;
+    backBtn.style.pointerEvents = 'none';
+
+    function showNextSlide() {
+      slides[currentIndex].classList.remove('active');
+      messages[currentIndex].classList.remove('active');
+
+      currentIndex++;
+
+      if (currentIndex < totalSlides) {
+        // Show next slide
+        slides[currentIndex].classList.add('active');
+        messages[currentIndex].classList.add('active');
+      } else {
+        // Last slide reached → show back button
+        slides[totalSlides - 1].classList.add('active');  // keep last slide visible
+        messages[totalSlides - 1].classList.add('active');
+
+        backBtn.style.transition = 'opacity 1s ease';
+        backBtn.style.opacity = 1;
+        backBtn.style.pointerEvents = 'auto';
+
+        // Stop the slideshow interval
+        clearInterval(slideshowInterval);
+      }
+    }
+
+    // Change slide every 3 seconds
+    const slideshowInterval = setInterval(showNextSlide, 3000);
+
+    // ===== Back Button =====
+    backBtn.addEventListener('click', () => {
+      window.location.href = 'index.html'; // go back to main page
+    });
+
+    // ===== Background Music =====
+    const bgMusic = document.getElementById('bg-music');
+
+    // Try to play when the page loads
+    window.addEventListener('load', () => {
+      bgMusic.play().catch(() => {
+        console.log("Autoplay blocked, waiting for user interaction");
+      });
+    });
+
+    // Optional: play music on first user interaction
+    document.body.addEventListener('click', () => {
+      if (bgMusic.paused) bgMusic.play();
+    });
+
+  </script>
+
+</body>
+</html>

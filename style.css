@@ -1,0 +1,144 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: "Pacifico", cursive;
+
+  background: linear-gradient(
+    270deg,
+    #ff1b6b,
+    #ff4d8d,
+    #ff85b3,
+    #ff4d8d,
+    #c9184a,
+    #ff1b6b
+  );
+  background-size: 600% 600%;
+  animation: rgbPink 18s ease infinite;
+}
+
+/* ===== Layers ===== */
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110%;
+  height: 110%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  pointer-events: none;
+}
+
+.background {
+  background: linear-gradient(
+    270deg,
+    #ff1b6b,
+    #ff4d8d,
+    #ff85b3,
+    #ff4d8d,
+    #c9184a,
+    #ff1b6b
+  );
+  background-size: 600% 600%;
+  animation: rgbPink 18s ease infinite;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.hearts {
+  background-image: url('pics/heart.gi');
+  z-index: 2;
+  mix-blend-mode: screen;
+}
+
+@keyframes rgbPink {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Titles */
+h1 {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  color: #f3e6ff;
+  font-size: 5em;
+  text-align: center;
+  pointer-events: auto;
+
+  text-shadow: 0 0 5px rgba(243, 230, 255, 0.5);
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+h1:hover {
+  text-shadow:
+    0 0 10px #f3e6ff,
+    0 0 20px #ff85b3,
+    0 0 30px #ff4d8d,
+    0 0 40px #ff1b6b;
+  color: #ffffff;
+}
+
+h2 {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  font-family: 'Alfa Slab One';
+  font-size: 2em;
+  color: #ffe4e1;
+  text-align: center;
+  text-shadow:
+    0 0 5px #ff4d8d,
+    0 0 10px #ff85b3;
+  pointer-events: none;
+}
+
+/* Buttons */
+.btn-container {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  display: flex;
+  gap: 30px;
+}
+
+.btn {
+  padding: 25px 60px;
+  font-size: 1.5em;
+  font-family: 'Pacifico', cursive;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+  background: #9b59b6;
+  text-shadow: 0 0 5px rgba(255,255,255,0.5);
+}
+
+.btn:hover {
+  background: #8e44ad;
+  text-shadow: 0 0 10px #c39bd3, 0 0 15px #8e44ad;
+  transform: scale(1.1);
+}
+
+.btn.no {
+  background: #e59433;
+  text-shadow: 0 0 5px #f39c12;
+}
+
+.btn.no:hover {
+  background: #e67e22;
+  text-shadow: 0 0 10px #f39c12, 0 0 15px #e67e22;
+  transform: scale(1.1);
+}
+
